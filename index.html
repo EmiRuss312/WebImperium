@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lorem - Шторы</title>
+
+    <!--CSS-->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!--Cormorant+Infant-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    
+    <!--PT+Sans-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    
+    <!--JQuerry-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <main>
+        <header class="main--menu">
+            
+        </header>
+
+
+        <section class="main--slider">
+            <div class="main--slider__container">
+                <div class="main--slider__items">
+                    <picture class="main--slider__picture">
+                        <source class="main--slider__source"
+                        media="(min-width: 1440px)"
+                        srcset="src/pc/MainSlider/MainSlider.svg">
+                        <source class="main--slider__source" 
+                        media="(max-width: 375px)" 
+                        srcset="src/mobile/MainSlider/MainSlideMobile.svg">
+                        <img class="main--slider__image" src="src/pc/MainSlider/MainSlider.svg" alt="MainSliderError!">
+                    </picture>
+                    <picture class="main--slider__picture">
+                        <source class="main--slider__source" media="(min-width: 1440px)" srcset="src/pc/MainSlider/MainSlider.svg">
+                        <source class="main--slider__source" media="(max-width: 375px)" srcset="src/mobile/MainSlider/MainSlideMobile.svg">
+                        <img class="main--slider__image" src="src/pc/MainSlider/MainSlider.svg" alt="MainSliderError!">
+                    </picture>
+                    <picture class="main--slider__picture">
+                        <source class="main--slider__source" media="(min-width: 1440px)" srcset="src/pc/MainSlider/MainSlider.svg">
+                        <source class="main--slider__source" media="(max-width: 375px)" srcset="src/mobile/MainSlider/MainSlideMobile.svg">
+                        <img class="main--slider__image" src="src/pc/MainSlider/MainSlider.svg" alt="MainSliderError!">
+                    </picture>
+                </div>
+            </div>
+
+            <div class="main--title">
+                <p class="main--title__p">
+                    КУПИТЕ
+                </p>
+                <p class="main--title__p">
+                    ЧТО-ТО
+                </p>
+                <p class="main--title__p">
+                    И ЕЩЕ <span class="main--title__span">ШТОРЫ</span>
+                </p>        
+                <p class="secondary--title__p">
+                    «Lorem» — производитель изделий для внутренней и внешней lorem
+                </p>
+            </div>
+
+            
+            <div class="buy--items">
+                <button class="buy--items__button">
+                    ЗАКАЗТЬ РАЗМЕР
+                </button>
+                <a class="buy--items__cart" href="#cart"><img src="src/pc/MainSlider/carticon.svg" alt="cartImage"></a>
+            </div>
+
+            
+            <button class="main--slider__calc">КАЛЬКУЛЯТОР</button>
+
+            <div class="slider--items">
+                <a class="slider--items__arrows" href="#left"><img src="src/pc/MainSlider/MainSliderLeftBtn.svg" alt="Left"></a>
+                <a class="slider--items__number" href="#">1/3</a>
+                <a class="slider--items__arrows" href="#right"><img src="src/pc/MainSlider/MainSliderRightBtn.svg" alt="Right"></a>
+            </div>
+
+            <div class="mobile--items">
+                <button class="mobile--items__buttons"></button>
+                <button class="mobile--items__buttons"></button>
+                <button class="mobile--items__buttons"></button>
+            </div>
+
+            <script>
+                $(document).ready(function () {
+                    const $slider = $(".main--slider__items");
+                    const $images = $(".main--slider__image");
+                    const $pageNumber = $(".slider--items__number");
+                    const $buttons = $(".mobile--items__buttons");
+                    let currentIndex = 0;
+                    const totalSlides = $images.length;
+
+                    function updateSlider() {
+                        const offset = -currentIndex * $images.width();
+                        $slider.css("transform", `translateX(${offset}px)`);
+                        $pageNumber.text(`${currentIndex + 1}/${totalSlides}`);
+                        updateButtons();
+                    }
+
+                    function updateButtons() {
+                        $buttons.css("background-color", "#FFFFFF");
+                        $buttons.eq(currentIndex).css("background-color", "#B84C74");
+                    }
+
+                    $(".slider--items__arrows[href='#left']").click(function (e) {
+                        e.preventDefault();
+                        if (currentIndex > 0) {
+                            currentIndex--;
+                            updateSlider();
+                        }
+                    });
+
+                    $(".slider--items__arrows[href='#right']").click(function (e) {
+                        e.preventDefault();
+                        if (currentIndex < totalSlides - 1) {
+                            currentIndex++;
+                            updateSlider();
+                        }
+                    });
+
+                    $buttons.each(function (index) {
+                        $(this).click(function () {
+                            currentIndex = index;
+                            updateSlider();
+                        });
+                    });
+
+                    updateSlider();
+                });
+            </script>
+        </section>
+
+
+        <section class="popular">
+            <p class="popular--text">
+                Популярное
+            </p>
+
+            <div class="popular--background">
+                <div class="popular--items">
+                    <div class="item item-1">
+                        <p class="item--text" id="item--text1"><span class="item--span">МОСКИТНЫЕ</span> СЕТКИ</p>
+                        <img class="popular--item__image" src="src/pc/PopularItems/popular1.svg" alt="Popular Item 1">
+                    </div>
+                    <div class="item item-2">
+                        <p class="item--text" id="item--text2">LOREM</p>
+                        <img class="popular--item__image" src="src/pc/PopularItems/popular2.svg" alt="Popular Item 2">
+                    </div>
+                    <div class="inner--grid">
+                        <div class="item item-3">
+                            <p class="item--text" id="item--text3">LOREM</p>
+                            <img class="popular--item__image" src="src/pc/PopularItems/popular3.svg" alt="Popular Item 3">
+                        </div>
+                        <div class="item item-4">
+                            <p class="item--text" id="item--text4">LOREM</p>
+                            <img class="popular--item__image" src="src/pc/PopularItems/popular4.svg" alt="Popular Item 4">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="popular--items__mobile">
+                    <div class="item item-1">
+                        <p class="item--text" id="item--text1"><span class="item--span">МОСКИТНЫЕ</span> СЕТКИ</p>
+                        <img class="popular--item__image" src="src/mobile/PopularItems/popular1Mobile.svg" alt="Popular Item 1">
+                    </div>
+                    <div class="item item-2">
+                        <p class="item--text" id="item--text2">LOREM</p>
+                        <img class="popular--item__image" src="src/mobile/PopularItems/popular2Mobile.svg" alt="Popular Item 2">
+                    </div>
+                    <div class="item item-3">
+                        <p class="item--text" id="item--text3">LOREM</p>
+                        <img class="popular--item__image" src="src/mobile/PopularItems/popular3Mobile.svg" alt="Popular Item 3">
+                    </div>
+                    <div class="item item-4">
+                        <p class="item--text" id="item--text4">LOREM</p>
+                        <img class="popular--item__image" src="src/mobile/PopularItems/popular4Mobile.svg" alt="Popular Item 4">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="best--offers">
+            <div class="best--offers__controls">
+                <p class="best--offers__title">
+                    ЛУЧШИЕ ПРЕДЛОЖЕНИЯ
+                </p>
+                
+                <div class="controls__items">
+                    <a class="controls__arrows" id="bestleft"><img src="src/pc/MainSlider/MainSliderLeftBtn.svg" alt="BestLeft"></a>
+                    <a class="controls__number" href="#">1/3</a>
+                    <a class="controls__arrows" id="bestright"><img src="src/pc/MainSlider/MainSliderRightBtn.svg" alt="BestRight"></a>
+                </div>
+            </div>
+
+            <div class="best--offers__wrapper">
+                <div class="best--offers__slider">
+                    <div class="best--offers__items">
+                        <div class="best--item">
+                            <div class="best--item__image">
+                                <img class="background--image" src="src/pc/BestItems/bestImage1.svg">
+                            </div>
+                            <a class="best--orders" href="#order1">
+                                <div class="best--description">
+                                    <p class="best--description__p">
+                                        Вертикальные жалюзи "Lorem"
+                                    </p>
+                                    <p class="best--description__price">
+                                        от <span class="best--description__span">1200Р <span
+                                                class="best--description__discount">1000Р</span></span>
+                                    </p>
+                                    <div class="best--buttons">
+                                        <button class="best--buttons__submit" href>Оформить заявку</button>
+                                        <img class="best--buttons__cart" src="src/pc/BestItems/bestCart.svg">
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="best--item">
+                            <div class="best--item__image">
+                                <img class="background--image" src="src/pc/BestItems/bestImage2.svg">
+                            </div>
+                            <a class="best--orders" href="#order1">
+                                <div class="best--description">
+                                    <p class="best--description__p">
+                                        Вертикальные жалюзи "Lorem"
+                                    </p>
+                                    <p class="best--description__price">
+                                        от <span class="best--description__span">1200Р <span
+                                                class="best--description__discount">1000Р</span></span>
+                                    </p>
+                                    <div class="best--buttons">
+                                        <button class="best--buttons__submit" href>Оформить заявку</button>
+                                        <img class="best--buttons__cart" src="src/pc/BestItems/bestCart.svg">
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="best--item">
+                            <div class="best--item__image">
+                                <img class="background--image" src="src/pc/BestItems/bestImage3.svg">
+                            </div>
+                            <a class="best--orders" href="#order1">
+                                <div class="best--description">
+                                    <p class="best--description__p">
+                                        Вертикальные жалюзи "Lorem"
+                                    </p>
+                                    <p class="best--description__price">
+                                        от <span class="best--description__span">1200Р <span
+                                                class="best--description__discount">1000Р</span></span>
+                                    </p>
+                                    <div class="best--buttons">
+                                        <button class="best--buttons__submit" href>Оформить заявку</button>
+                                        <img class="best--buttons__cart" src="src/pc/BestItems/bestCart.svg">
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="best--item">
+                            <div class="best--item__image">
+                                <img class="background--image" src="src/pc/BestItems/bestImage4.svg">
+                            </div>
+                            <a class="best--orders" href="#order1">
+                                <div class="best--description">
+                                    <p class="best--description__p">
+                                        Вертикальные жалюзи "Lorem"
+                                    </p>
+                                    <p class="best--description__price">
+                                        от <span class="best--description__span">1200Р <span
+                                                class="best--description__discount">1000Р</span></span>
+                                    </p>
+                                    <div class="best--buttons">
+                                        <button class="best--buttons__submit" href>Оформить заявку</button>
+                                        <img class="best--buttons__cart" src="src/pc/BestItems/bestCart.svg">
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="best--item">
+                            <div class="best--item__image">
+                                <img class="background--image" src="src/pc/BestItems/bestImage4.svg">
+                            </div>
+                            <a class="best--orders" href="#order1">
+                                <div class="best--description">
+                                    <p class="best--description__p">
+                                        Вертикальные жалюзи "Lorem"
+                                    </p>
+                                    <p class="best--description__price">
+                                        от <span class="best--description__span">1200Р <span
+                                                class="best--description__discount">1000Р</span></span>
+                                    </p>
+                                    <div class="best--buttons">
+                                        <button class="best--buttons__submit" href>Оформить заявку</button>
+                                        <img class="best--buttons__cart" src="src/pc/BestItems/bestCart.svg">
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="best--item">
+                            <div class="best--item__image">
+                                <img class="background--image" src="src/pc/BestItems/bestImage4.svg">
+                            </div>
+                            <a class="best--orders" href="#order1">
+                                <div class="best--description">
+                                    <p class="best--description__p">
+                                        Вертикальные жалюзи "Lorem"
+                                    </p>
+                                    <p class="best--description__price">
+                                        от <span class="best--description__span">1200Р <span
+                                                class="best--description__discount">1000Р</span></span>
+                                    </p>
+                                    <div class="best--buttons">
+                                        <button class="best--buttons__submit" href>Оформить заявку</button>
+                                        <img class="best--buttons__cart" src="src/pc/BestItems/bestCart.svg">
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="best--item">
+                            <div class="best--item__image">
+                                <img class="background--image" src="src/pc/BestItems/bestImage4.svg">
+                            </div>
+                            <a class="best--orders" href="#order1">
+                                <div class="best--description">
+                                    <p class="best--description__p">
+                                        Вертикальные жалюзи "Lorem"
+                                    </p>
+                                    <p class="best--description__price">
+                                        от <span class="best--description__span">1200Р <span
+                                                class="best--description__discount">1000Р</span></span>
+                                    </p>
+                                    <div class="best--buttons">
+                                        <button class="best--buttons__submit" href>Оформить заявку</button>
+                                        <img class="best--buttons__cart" src="src/pc/BestItems/bestCart.svg">
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="best--item">
+                            <div class="best--item__image">
+                                <img class="background--image" src="src/pc/BestItems/bestImage3.svg">
+                            </div>
+                            <a class="best--orders" href="#order1">
+                                <div class="best--description">
+                                    <p class="best--description__p">
+                                        Вертикальные жалюзи "Lorem"
+                                    </p>
+                                    <p class="best--description__price">
+                                        от <span class="best--description__span">1200Р <span
+                                                class="best--description__discount">1000Р</span></span>
+                                    </p>
+                                    <div class="best--buttons">
+                                        <button class="best--buttons__submit" href>Оформить заявку</button>
+                                        <img class="best--buttons__cart" src="src/pc/BestItems/bestCart.svg">
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="best--item">
+                            <div class="best--item__image">
+                                <img class="background--image" src="src/pc/BestItems/bestImage3.svg">
+                            </div>
+                            <a class="best--orders" href="#order1">
+                                <div class="best--description">
+                                    <p class="best--description__p">
+                                        Вертикальные жалюзи "Lorem"
+                                    </p>
+                                    <p class="best--description__price">
+                                        от <span class="best--description__span">1200Р <span
+                                                class="best--description__discount">1000Р</span></span>
+                                    </p>
+                                    <div class="best--buttons">
+                                        <button class="best--buttons__submit" href>Оформить заявку</button>
+                                        <img class="best--buttons__cart" src="src/pc/BestItems/bestCart.svg">
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="best--item">
+                            <div class="best--item__image">
+                                <img class="background--image" src="src/pc/BestItems/bestImage3.svg">
+                            </div>
+                            <a class="best--orders" href="#order1">
+                                <div class="best--description">
+                                    <p class="best--description__p">
+                                        Вертикальные жалюзи "Lorem"
+                                    </p>
+                                    <p class="best--description__price">
+                                        от <span class="best--description__span">1200Р <span
+                                                class="best--description__discount">1000Р</span></span>
+                                    </p>
+                                    <div class="best--buttons">
+                                        <button class="best--buttons__submit" href>Оформить заявку</button>
+                                        <img class="best--buttons__cart" src="src/pc/BestItems/bestCart.svg">
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="best--item">
+                            <div class="best--item__image">
+                                <img class="background--image" src="src/pc/BestItems/bestImage3.svg">
+                            </div>
+                            <a class="best--orders" href="#order1">
+                                <div class="best--description">
+                                    <p class="best--description__p">
+                                        Вертикальные жалюзи "Lorem"
+                                    </p>
+                                    <p class="best--description__price">
+                                        от <span class="best--description__span">1200Р <span
+                                                class="best--description__discount">1000Р</span></span>
+                                    </p>
+                                    <div class="best--buttons">
+                                        <button class="best--buttons__submit" href>Оформить заявку</button>
+                                        <img class="best--buttons__cart" src="src/pc/BestItems/bestCart.svg">
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                $(document).ready(function () {
+                    const slider = $(".best--offers__slider");
+                    const items = $(".best--offers__items .best--item");
+                    const visibleCount = 1;
+                    const totalItems = items.length - 3;
+                    const totalPages = Math.ceil(totalItems / visibleCount);
+                    const gap = 64;
+                    const itemWidth = items.outerWidth();
+                    const stepWidth = itemWidth + gap;
+                    const maxScroll = (totalItems - visibleCount) * stepWidth;
+                    let currentScroll = 0;
+                    let currentPage = 1;
+
+                    let touchStartX = 0;
+                    let touchEndX = 0;
+
+                    const updateCounter = () => {
+                        $(".controls__number").text(`${currentPage}/${totalPages}`);
+                    };
+
+                    $("#bestright").click(function () {
+                        if (currentScroll < maxScroll) {
+                            currentScroll += stepWidth;
+                            currentPage = Math.min(currentPage + 1, totalPages);
+                        } else {
+                            currentScroll = 0;
+                            currentPage = 1;
+                        }
+                            slider.css("transform", `translateX(-${currentScroll}px)`);
+                            updateCounter();
+                        });
+
+                    $("#bestleft").click(function () {
+                        if (currentScroll > 0) {
+                            currentScroll -= stepWidth;
+                            currentPage = Math.max(currentPage - 1, 1);
+                        } else {
+                            currentScroll = maxScroll;
+                            currentPage = totalPages;
+                        }
+                        slider.css("transform", `translateX(-${currentScroll}px)`);
+                        updateCounter();
+                    });
+
+                    updateCounter();
+                    });
+            </script>
+        </section>
+
+
+        <footer class="footer--about__pc">
+            <div class="footer--upper">
+                <div class="footer--upper__lorem">
+                    <a class="footer--upper__a" href="#lorem"><span class="footer--upper__span">Lorem</span></a>
+                    <a class="footer--upper__a" href="#lorem"><span class="footer--upper__span">Lorem</span></a>
+                    <a class="footer--upper__a" href="#lorem"><span class="footer--upper__span">Lorem</span></a>
+                    <a class="footer--upper__a" href="#lorem"><span class="footer--upper__span">Lorem</span></a>
+                    <a class="footer--upper__a" href="#lorem"><span class="footer--upper__span">Lorem</span></a>
+                    <a class="footer--upper__a" href="#lorem"><span class="footer--upper__span">Lorem</span></a>
+                </div>
+
+                <div class="footer--upper__about">
+                    <a class="footer--upper__a" href="#company"><span class="footer--upper__span">О компании</span></a>
+                    <a class="footer--upper__a" href="#feedback"><span class="footer--upper__span">Отзывы</span></a>
+                    <a class="footer--upper__a" href="#blog"><span class="footer--upper__span">Блог</span></a>
+                    <a class="footer--upper__a" href="#contacts"><span class="footer--upper__span">Контакты</span></a>
+                    <a class="footer--upper__a" href="#buyers"><span class="footer--upper__span">Коммерческим покупателям</span></a>
+                </div>
+
+                <div class="footer--upper__logo">
+                    <span class="footer--upper__span" id="logo--span">LOGO</span>
+
+                    <div class="logo--region">
+                        <span class="footer--upper__span" id="region--span">Москва и МО:</span>
+                    </div>
+
+                    <div class="logo--worktime">
+                        <span class="footer--upper__span" id="worktime--span">Режим работы:</span>
+                        <span class="footer--upper__span" id="worktime--span">ежедневно c 9:00 до 21:00</span>
+                    </div>
+                    
+                    <div class="logo--phone">
+                        <span class="footer--upper__span" id="phone--span">8 955 545 23 81</span>
+                        <span class="footer--upper__span" id="phone--span">8 955 515 21 81</span>
+                    </div>
+                </div>
+
+                <div class="footer--upper__socials">
+                    <div class="socials--calc">
+                        <a href="#footer-calc"><button class="footer--calc__button">КАЛЬКУЛЯТОР</button></a>
+                    </div>
+
+                    <div class="socials__mail">
+                        <span class="footer--upper__span">E-mail:</span>
+                        <span class="footer--upper__span">info@lorem.ru</span>
+                    </div>
+
+                    <div class="socials--media">
+                        <a class="footer--upper__a" href="#FB"><span class="footer--upper__span">FB</span></a>
+                        <a class="footer--upper__a" href="#OK"><span class="footer--upper__span">OK</span></a>
+                        <a class="footer--upper__a" href="#VK"><span class="footer--upper__span">VK</span></a>
+                        <a class="footer--upper__a" href="#TW"><span class="footer--upper__span">TW</span></a>
+                        <a class="footer--upper__a" href="#IN"><span class="footer--upper__span">IN</span></a>
+                        <a class="footer--upper__a" href="#YT"><span class="footer--upper__span">YT</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer--title">
+                <div class="footer--title--container">
+                    <img class="footer--title__border" src="src/pc/FooterItems/borderLine.svg">
+                    
+                    <div class="footer--title__text">
+                        <span class="footer--upper__span" id="footer--lower">© 2020 Lorem</span>
+                        <span class="footer--upper__span" id="footer--lower">Правила использования cookie</span>
+                        <span class="footer--upper__span" id="footer--lower">Пользовательское соглашение</span>
+                        <span class="footer--upper__span" id="footer--lower">Карта сайта</span>
+                        <span class="footer--upper__span" id="footer--lower">Разработка — Lorem</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+        <footer class="footer--about__mobile">
+            <div class="footer--about__upper">
+                <div class="footer--lorem">
+                    <div class="footer--upper__lorem">
+                        <a class="footer--upper__a" href="#lorem"><span class="footer--upper__span" id="lorem__span">Lorem</span></a>
+                        <a class="footer--upper__a" href="#lorem"><span class="footer--upper__span" id="lorem__span">Lorem</span></a>
+                        <a class="footer--upper__a" href="#lorem"><span class="footer--upper__span" id="lorem__span">Lorem</span></a>
+                        <a class="footer--upper__a" href="#lorem"><span class="footer--upper__span" id="lorem__span">Lorem</span></a>
+                        <a class="footer--upper__a" href="#lorem"><span class="footer--upper__span" id="lorem__span">Lorem</span></a>
+                        <a class="footer--upper__a" href="#lorem"><span class="footer--upper__span" id="lorem__span">Lorem</span></a>
+                    </div>
+                
+                    <div class="footer--upper__about">
+                        <a class="footer--upper__a" href="#company"><span class="footer--upper__span">О компании</span></a>
+                        <a class="footer--upper__a" href="#feedback"><span class="footer--upper__span">Отзывы</span></a>
+                        <a class="footer--upper__a" href="#blog"><span class="footer--upper__span">Блог</span></a>
+                        <a class="footer--upper__a" href="#contacts"><span class="footer--upper__span">Контакты</span></a>
+                        <a class="footer--upper__a" href="#buyers"><span class="footer--upper__span">Коммерческим покупателям</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer--borderline">
+                <img class="footer--title__border" src="src/pc/FooterItems/borderLine.svg">
+            </div>
+
+            <div class="footer--upper__logo">
+                <span class="footer--upper__span" id="logo--span">LOGO</span>
+            
+                <div class="logo--region">
+                    <span class="footer--upper__span" id="region--span">Москва и МО:</span>
+                    <span class="footer--upper__span" id="worktime--span">ежедневно c 9:00 до 21:00</span>
+                </div>
+            
+                <div class="logo--phone">
+                    <span class="footer--upper__span" id="phone--span">8 955 545 23 81</span>
+                    <span class="footer--upper__span" id="phone--span">8 955 515 21 81</span>
+                </div>
+            </div>
+
+            <div class="footer--borderline">
+                <img class="footer--title__border" src="src/pc/FooterItems/borderLine.svg">
+            </div>
+
+            <div class="footer--upper__socials">
+                <a href="#footer-calc"><button class="footer--calc__button">КАЛЬКУЛЯТОР</button></a>
+
+                <div class="socials__mail">
+                    <span class="footer--upper__span">E-mail: info@lorem.ru</span>
+                </div>
+
+                <div class="socials--media">
+                    <a class="footer--upper__a" href="#FB"><span class="footer--upper__span" id="social--meida__span">FB</span></a>
+                    <a class="footer--upper__a" href="#OK"><span class="footer--upper__span" id="social--meida__span">OK</span></a>
+                    <a class="footer--upper__a" href="#VK"><span class="footer--upper__span" id="social--meida__span">VK</span></a>
+                    <a class="footer--upper__a" href="#TW"><span class="footer--upper__span" id="social--meida__span">TW</span></a>
+                    <a class="footer--upper__a" href="#IN"><span class="footer--upper__span" id="social--meida__span">IN</span></a>
+                    <a class="footer--upper__a" href="#YT"><span class="footer--upper__span" id="social--meida__span">YT</span></a>
+                </div>
+            </div>
+
+            <div class="footer--borderline">
+                <img class="footer--title__border" src="src/pc/FooterItems/borderLine.svg">
+            </div>
+
+            <div class="footer--title">
+                <span class="footer--upper__span" id="footer--lower">Правила использования cookie</span>
+                <span class="footer--upper__span" id="footer--lower">Пользовательское соглашение</span>
+                <span class="footer--upper__span" id="footer--lower">Карта сайта</span>
+                <span class="footer--upper__span" id="footer--lower">© 2020 Lorem</span>
+                <span class="footer--upper__span" id="footer--lower">Разработка — Lorem</span>
+            </div>
+        </footer>
+    </main>
+</body>
+</html>

@@ -1,0 +1,1092 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FFFFFF;
+}
+
+
+
+
+.main--slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.main--slider__container {
+    overflow: hidden;
+}
+
+.main--slider__items {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.main--slider__image {
+    width: 100%;
+    height: 100%;
+}
+
+.main--title {
+    position: absolute;
+}
+
+.main--title__p,
+.main--title__span,
+.secondary--title__p {
+    color: #052E4C;
+    text-align: left;
+}
+
+.main--title__p,
+.main--title__span {
+    font-family: "Cormorant Infant", serif;
+}
+
+.secondary--title__p,
+.best--offers__title,
+.footer--upper__span {
+    font-family: "PT Sans", sans-serif;
+}
+
+
+
+
+.popular {
+    background-color: #052E4C;
+}
+
+.popular--background {
+    background-color: #417A82;
+}
+
+
+
+
+
+
+
+
+@media (min-width: 1440px) {
+    .main--slider {
+        width: 1440px;
+        height: 800px;
+    }
+
+    .main--slider__container, 
+    .main--slider__items, 
+    .main--slider__picture {
+        width: 1368px;
+        height: 800px;
+    }
+
+    .main--slider__items {
+        width: calc(1368px * 3);
+    }
+
+    .main--slider__picture {
+        display: block;
+    }
+
+    .main--title {
+        margin-right: 250px;
+        margin-bottom: 298px;
+        width: 846px;
+        height: 234px;
+    }
+
+    .main--title__p,
+    .main--title__span {
+        font-size: 78px;
+    }
+
+    .main--title__p {
+        font-weight: 300;
+    }
+
+    .main--title__span,
+    .main--title__p:nth-child(2) {
+        font-weight: 600;
+        font-style: oblique;
+    }
+
+    .secondary--title__p {
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    .buy--items {
+        position: absolute;
+        display: inline-flex;
+        width: 206px;
+        height: 40px;
+        margin-left: 987px;
+        margin-bottom: 700px;
+    }
+
+    .buy--items__button {
+        width: 149px;
+        height: 40px;
+        font-family: "PT Sans", sans-serif;
+        font-size: 13px;
+        font-weight: 400;
+        border: none;
+        background-color: #B84C74;
+        color: #FFFFFF;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .main--slider__calc {
+        position: absolute;
+        margin-top: 256px;
+        margin-right: 965px;
+        width: 132px;
+        height: 40px;
+        font-family: "PT Sans", sans-serif;
+        font-size: 13px;
+        font-weight: 400;
+        border: none;
+        background-color: #FFFFFF;
+        color: #052E4C;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .slider--items {
+        position: absolute;
+        width: 72px;
+        height: 22px;
+        margin-top: 600px;
+        margin-right: 1025px;
+        display: inline-flex;
+        gap: 10px;
+    }
+
+    .slider--items__arrows {
+        width: 13px;
+        height: 24px;
+        cursor: pointer;
+    }
+
+    .slider--items__number {
+        width: 27px;
+        height: 17px;
+        text-decoration: none;
+        user-select: none;
+        font-family: "PT Sans", sans-serif;
+        color: #052E4C;
+        font-size: 13px;
+        font-weight: 400;
+        text-align: center;
+        line-height: 17px;
+    }
+
+
+
+
+    .popular {
+        width: 1368px;
+        height: 672px;
+    }
+
+    .popular--text {
+        position: absolute;
+        transform: translateY(-40px);
+        opacity: 0.1;
+        z-index: 1;
+        color: #FFFFFF;
+        font-family: "Cormorant Infant";
+        text-align: center;
+        font-size: 300px;
+        font-weight: 400;
+        font-style: italic;
+    }
+
+    .popular--background {
+        margin: 0;
+        width: 1208px;
+        height: 672px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+
+    .popular--items {
+        margin: 0;
+        width: 1120px;
+        height: 480px;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: 616px 504px;
+        grid-template-rows: 240px 240px;
+        grid-template-areas:
+            "one two"
+            "three two";
+    }
+    
+    .inner--grid {
+        grid-area: three;
+        display: flex;
+    }
+    
+    .item-1 {
+        grid-area: one;
+        width: 616px;
+        height: 240px;
+    }
+    
+    .item-2 {
+        grid-area: two;
+        width: 504px;
+        height: 480px;
+    }
+    
+    .item-3,
+    .item-4 {
+        width: 50%;
+        height: 100%;
+        box-sizing: border-box;
+    }
+    
+    .item {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .popular--item__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .item--text {
+        position: absolute;
+        text-align: left;
+        top: 40px;
+        left: 40px;
+        font-family: "Cormorant Infant", serif;
+        font-size: 25px;
+        width: 100%;
+    }
+
+    .item--span {
+        font-weight: 700;
+        font-style: italic;
+    }
+
+    #item--text1,
+    #item--text2,
+    #item--text3 {
+        color: #052E4C;
+    }
+
+    #item--text4 {
+        color: #FFFFFF;
+    }
+
+    #item--text1,
+    #item--text2,
+    #item--text4 {
+        font-weight: 400;
+    }
+
+    #item--text3 {
+        font-weight: 700;
+        font-style: italic;
+    }
+
+
+
+
+    .best--offers {
+        margin-top: 136px;
+        width: 1368px;
+        height: 850px;
+    }
+
+    .best--offers__controls {
+        height: 26px;
+        display: inline-flex;
+
+    }
+
+    .best--offers__title {
+        margin-left: 87px;
+        color: #052E4C;
+        font-size: 20px;
+        font-weight: 400;
+        display: inline-block;
+    }
+
+    .controls__items {
+        position: absolute;
+        transform: translateX(1135px);
+        width: 72px;
+        height: 22px;
+        display: inline-flex;
+        gap: 10px;
+    }
+
+    .controls__arrows {
+        width: 13px;
+        height: 24px;
+        cursor: pointer;
+    }
+
+    .controls__number {
+        width: 27px;
+        height: 17px;
+        text-decoration: none;
+        user-select: none;
+        font-family: "PT Sans", sans-serif;
+        color: #052E4C;
+        font-size: 13px;
+        font-weight: 400;
+        text-align: center;
+        line-height: 17px;
+    }
+
+    .best--offers__wrapper {
+        margin: 0 auto;
+        margin-top: 22px;
+        height: 536px;
+        overflow: hidden;
+        width: 1250px;
+    }
+
+    .best--offers__slider {
+        display: flex;
+        transition: transform 0.4s ease-in-out;
+        will-change: transform;
+    }
+
+    .best--offers__items {
+        width: 1144px;
+        display: grid;
+        gap: 0px 32px;
+        display: flex;
+        scroll-behavior: smooth;
+    }
+
+    .best--item {
+        flex-shrink: 0;
+        width: 256px;
+        margin-right: 32px;
+    }
+    
+    .best--description {
+        margin-top: 24px;
+        width: 213px;
+        height: 175px;
+    }
+    
+    .best--orders {
+        outline: none;
+        text-decoration: none;
+    }
+    
+    .best--description__name {
+        width: 207px;
+        height: 63px;
+    }
+    
+    .best--description__p {
+        width: 207px;
+        height: 63px;
+        color: #052E4C;
+        font-family: "PT Sans", sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        font-style: italic;
+    }
+    
+    .best--description__price {
+        margin-top: 16px;
+        width: 192px;
+        height: 40px;
+        color: #052E4C;
+        font-family: "Cormorant Infant", serif;
+        font-size: 20px;
+        font-weight: 400;
+        white-space: nowrap;
+    }
+    
+    .best--description__span {
+        font-family: "Cormorant";
+        font-size: 32px;
+        font-weight: 700;
+    }
+    
+    .best--description__discount {
+        font-weight: 400;
+        opacity: 0.2;
+        position: relative;
+    }
+    
+    .best--description__discount::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0px;
+        width: 67.6px;
+        height: 2px;
+        background-color: red;
+        transform: rotate(-25deg);
+        transform-origin: bottom left;
+    }
+
+    .best--buttons {
+        display: flex;
+        justify-content: space-between;
+        width: 213px;
+        height: 40px;
+    }
+
+    .best--buttons__submit {
+        width: 160px;
+        height: 40px;
+        font-family: "PT Sans", sans-serif;
+        font-size: 13px;
+        border: 1px solid #052E4C;
+        background-color: transparent;
+        color: #052E4C;
+        cursor: pointer;
+        text-align: center;
+        line-height: 40px;
+        display: inline-block;
+    }
+
+    
+
+
+    .footer--about__pc {
+        width: 1440px;
+        height: 337px;
+        background-color: #262626;
+    }
+
+    .footer--upper {
+        display: inline-flex;
+        margin-left: 160px;
+        margin-top: 48px;
+    }
+
+    .footer--upper__lorem {
+        display: grid;
+        grid-row-gap: 10px;
+    }
+
+    .footer--upper__a {
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .footer--upper__span {
+        color: #FFFFFF;
+        font-size: 13px;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    .footer--upper__about {
+        margin-left: 157px;
+        display: grid;
+        grid-row-gap: 15px;
+    }
+
+    .footer--upper__logo {
+        margin-left: 121px;
+        text-align: center;
+    }
+
+    #logo--span {
+        font-size: 33px;
+        font-weight: 400;
+    }
+
+    .logo--region {
+        margin-top: 26px;
+    }
+
+    #region--span {
+        font-weight: 700;
+    }
+
+    .logo--worktime {
+        margin-top: 10px;
+        display: grid;
+    }
+
+    #worktime--span {
+        font-size: 13px;
+        font-weight: 400;
+    }
+
+    .logo--phone {
+        margin-top: 28px;
+        display: flex;
+        align-items: center;
+        gap: 22px;
+    }
+
+    #phone--span {
+        font-family: "Cormorant Infant", serif;
+        font-size: 25px;
+        font-weight: 700;
+    }
+
+    .footer--upper__socials {
+        margin-left: 169px;
+    }
+
+    .footer--calc__button {
+        width: 236px;
+        height: 40px;
+        font-family: "PT Sans", sans-serif;
+        font-size: 13px;
+        border: 1px solid #FFFFFF;
+        background-color: transparent;
+        color: #FFFFFF;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .socials__mail {
+        margin-top: 61px;
+        display: grid;
+        justify-content: flex-start;
+    }
+
+    .socials--media {
+        margin-top: 24px;
+        gap: 14px;
+    }
+
+    .footer--title {
+        margin-top: 47px;
+        display: flex;
+    }
+
+    .footer--title__container {
+        width: 1119px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .footer--title__border {
+        width: 1119px;
+        height: 1px;
+    }
+
+    .footer--title__text {
+        width: 1119px;
+        display: flex;
+        justify-content: center;
+        white-space: nowrap;
+    }
+
+    #footer--lower {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+
+    #footer--lower:first-of-type {
+        margin-right: 230px;
+    }
+
+    #footer--lower:last-of-type {
+        margin-left: 185px;
+    }
+
+
+
+
+    .mobile--items,
+    .popular--items__mobile,
+    .footer--about__mobile {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+@media (max-width: 375px) {
+    .main--slider, 
+    .main--slider__container,
+    .main--slider__picture {
+        width: 375px;
+        height: 508px;
+    }
+
+    .main--slider__items {
+        width: calc(375px * 3);
+    }
+
+    .main--slider__picture {
+        display: block;
+    }
+
+    .main--title {
+        margin-bottom: 267px;
+        width: 336px;
+        height: 126px;
+    }
+
+    .main--title__p,
+    .main--title__span {
+        font-size: 42px;
+    }
+    
+    .main--title__p {
+        font-weight: 300;
+    }
+    
+    .main--title__span,
+    .main--title__p:nth-child(2) {
+        font-weight: 600;
+        font-style: oblique;
+    }
+    
+    .secondary--title__p {
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    .main--slider__calc {
+        position: absolute;
+        margin-top: 100px;
+        margin-right: 200px;
+        width: 132px;
+        height: 40px;
+        font-family: "PT Sans", sans-serif;
+        font-size: 13px;
+        font-weight: 400;
+        border: none;
+        background-color: #FFFFFF;
+        color: #052E4C;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .mobile--items {
+        position: absolute;
+        display: block;
+        margin-top: 450px;
+        margin-right: 300px;
+        gap: 8px;
+        width: 46px;
+        height: 10px;
+    }
+
+    .mobile--items__buttons {
+        width: 10px;
+        height: 10px;
+        border: none;
+        background-color: #FFFFFF;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+
+
+
+    .popular {
+        width: 375px;
+        height: 744px;
+    }
+
+    .popular--text {
+        position: absolute;
+        width: 425px;
+        height: 56px;
+        opacity: 0.1;
+        z-index: 1;
+        transform: translateX(-40px);
+        color: #FFFFFF;
+        font-family: "Cormorant Infant";
+        text-align: center;
+        font-size: 99px;
+        font-weight: 400;
+        font-style: italic;
+        letter-spacing: -3px;
+    }
+
+    .popular--background {
+        width: 375px;
+        height: 696px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+
+    .popular--items__mobile {
+        width: 336px;
+        height: 600px;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: 336px;
+        grid-template-rows: 150px 150px 150px 150px;
+        grid-template-areas:
+            "one"
+            "two"
+            "three"
+            "four";
+    }
+
+    .item {
+        width: 336px;
+        height: 150px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .item--text {
+        position: absolute;
+        text-align: left;
+        top: 24px;
+        left: 24px;
+        font-family: "Cormorant Infant", serif;
+        font-size: 22px;
+        width: 100%;
+    }
+    
+    .popular--item__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .item--span {
+        font-weight: 700;
+        font-style: italic;
+    }
+    
+    #item--text1,
+    #item--text2,
+    #item--text3 {
+        color: #052E4C;
+    }
+    
+    #item--text4 {
+        color: #FFFFFF;
+    }
+    
+    #item--text1,
+    #item--text2,
+    #item--text4 {
+        font-weight: 400;
+    }
+    
+    #item--text3 {
+        font-weight: 700;
+        font-style: italic;
+    }
+
+    #item--text1 {
+        width: 156px;
+    }
+
+
+
+
+    .best--offers {
+        width: 375px;
+        height: 599px;
+    }
+
+    .best--offers__controls {
+        width: 375px;
+        height: 26px;
+        margin-top: 48px;
+        align-items: flex-start;
+    }
+
+    .best--offers__title {
+        margin-left: 20px;
+        color: #052E4C;
+        font-size: 20px;
+        font-weight: 400;
+
+    }
+
+    .best--offers__wrapper {
+        margin: 0 auto;
+        margin-top: 22px;
+        margin-left: 20px;
+        height: 503px;
+        overflow: hidden;
+        width: 375px;
+    }
+    
+    .best--offers__slider {
+        display: flex;
+        transition: transform 0.4s ease-in-out;
+        will-change: transform;
+    }
+    
+    .best--offers__items {
+        width: 375px;
+        display: grid;
+        gap: 0px 32px;
+        display: flex;
+        scroll-behavior: smooth;
+        }
+    
+    .best--item {
+        flex-shrink: 0;
+        width: 224px;
+        margin-right: 32px;
+    }
+    
+    .best--description {
+        margin-top: 24px;
+        width: 213px;
+        height: 175px;
+    }
+    
+    .best--orders {
+        outline: none;
+        text-decoration: none;
+    }
+    
+    .best--description__name {
+        width: 207px;
+        height: 63px;
+    }
+    
+    .best--description__p {
+        width: 207px;
+        height: 63px;
+        color: #052E4C;
+        font-family: "PT Sans", sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        font-style: italic;
+    }
+    
+    .best--description__price {
+        margin-top: 16px;
+        width: 192px;
+        height: 40px;
+        color: #052E4C;
+        font-family: "Cormorant Infant", serif;
+        font-size: 20px;
+        font-weight: 400;
+        white-space: nowrap;
+    }
+    
+    .best--description__span {
+        font-family: "Cormorant";
+        font-size: 32px;
+        font-weight: 700;
+    }
+    
+    .best--description__discount {
+        font-weight: 400;
+        opacity: 0.2;
+        position: relative;
+    }
+    
+    .best--description__discount::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0px;
+        width: 67.6px;
+        height: 2px;
+        background-color: red;
+        transform: rotate(-25deg);
+        transform-origin: bottom left;
+    }
+    
+    .best--buttons {
+        display: flex;
+        justify-content: space-between;
+        width: 213px;
+        height: 40px;
+    }
+    
+    .best--buttons__submit {
+        width: 160px;
+        height: 40px;
+        font-family: "PT Sans", sans-serif;
+        font-size: 13px;
+        border: 1px solid #052E4C;
+        background-color: transparent;
+        color: #052E4C;
+        cursor: pointer;
+        text-align: center;
+        line-height: 40px;
+        display: inline-block;
+    }
+
+
+
+
+    .footer--about__mobile {
+        width: 375px;
+        height: 1157px;
+        background-color: #262626;
+    }
+
+    .footer--about__upper {
+        padding-top: 20px;
+    }
+
+    .footer--lorem {
+        width: 335px;
+        height: 213px;
+        display: flex;
+    }
+
+    .footer--upper__lorem,
+    .footer--upper__about {
+        display: grid;
+    }
+
+    .footer--upper__about {
+        justify-items: start;
+        margin: 0;
+    }
+
+    #lorem__span {
+        margin: 0;
+        text-align: left;
+    }
+
+    .footer--upper__a {
+        text-decoration: none;
+    }
+
+    .footer--upper__span {
+        color: #FFFFFF;
+        font-size: 13px;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    .footer--borderline {
+        width: 375px;
+        height: 1px;
+    }
+
+    .footer--upper__logo {
+        width: 195px;
+        height: 248px;
+        margin-top: 85px;
+        display: grid;
+    }
+
+    #logo--span {
+        font-size: 33px;
+        font-weight: 400;
+    }
+
+    .logo--region {
+        margin-top: 30px;
+        display: grid;
+    }
+
+    #region--span {
+        font-weight: 700;
+    }
+
+    .logo--phone {
+        margin-top: 30px;
+        display: grid;
+    }
+
+    #phone--span {
+        font-family: "Cormorant Infant";
+        font-size: 32px;
+        font-weight: 700;
+    }
+
+    .footer--upper__socials {
+        width: 336px;
+        height: 154px;
+        margin-top: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        display: grid;
+    }
+
+    .footer--calc__button {
+        width: 336px;
+        height: 40px;
+        font-family: "PT Sans", sans-serif;
+        font-size: 13px;
+        border: 1px solid #FFFFFF;
+        background-color: transparent;
+        color: #FFFFFF;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .socials--media {
+        display: flex;
+        gap: 24px;
+    }
+
+    #social--meida__span {
+        font-size: 18px;
+    }
+
+    .footer--title {
+        margin-top: 47px;
+        display: grid;
+    }
+
+    #footer--lower {
+        font-size: 16px;
+        opacity: 0.5;
+    }
+
+    #footer--lower:nth-child(2),
+    #footer--lower:nth-child(2) {
+        margin-top: 16px;
+    }
+
+    #footer--lower:nth-child(4),
+    #footer--lower:nth-child(5) {
+        font-size: 13px;
+    }
+
+    #footer--lower:nth-child(4) {
+        margin-top: 40px;
+    }
+
+    #footer--lower:nth-child(5) {
+        margin-top: 20px;
+    }
+
+
+
+
+    .buy--items,
+    .slider--items,
+    .popular--items,
+    .controls__items,
+    .footer--about__pc {
+        display: none;
+    }
+}
